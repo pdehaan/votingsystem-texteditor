@@ -32,13 +32,13 @@
        * @property fancy
        * @type bool
        */
-      data: null,
+      data: '',
 
       ready: function() {
-          if('mobile' == this.type) editorConfig = { toolbar: [[ 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList',
+          if('mobile' == this.type) this.editorConfig = { toolbar: [[ 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList',
                 '-', 'Link', 'Unlink' ], [ 'FontSize', 'TextColor', 'BGColor' ]]}
           else {
-              editorConfig = { toolbar: [[ 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink' ],
+              this.editorConfig = { toolbar: [[ 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink' ],
                   [ 'FontSize', 'TextColor', 'BGColor' ]]}
           }
           this.editor =  CKEDITOR.appendTo( this.$.internalcontainer, editorConfig);
