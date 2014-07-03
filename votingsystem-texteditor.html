@@ -41,7 +41,7 @@
               this.editorConfig = { toolbar: [[ 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink' ],
                   [ 'FontSize', 'TextColor', 'BGColor' ]]}
           }
-          this.editor =  CKEDITOR.appendTo( this.$.internalcontainer, editorConfig);
+          this.editor =  CKEDITOR.appendTo( this.$.internalcontainer, this.editorConfig);
           CKEDITOR.on('instanceReady',function( ev ) {
               if(this.data != null) {
                   this.editor.insertHtml(this.data);
