@@ -1,5 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="ckeditor-import.html">
+<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
 <!-- http://ckeditor.com/ wrapper
 
 ##### Example
@@ -9,7 +9,7 @@
 @element votingsystem-texteditor
 @blurb Element wrapping ckeditor
 @status alpha
-@homepagehttps://github.com/votingsystem/votingsystem-texteditor
+@homepage http://jgzornoza.github.io/votingsystem-texteditor
 -->
 <polymer-element name="votingsystem-texteditor" attributes="dataJSON type">
     <template>
@@ -23,8 +23,10 @@
             isEditorLoaded: false,
 
             /**
-             * @property data
-             * @type string
+             * `fancy` is a property that does something fancy.
+             *
+             * @property fancy
+             * @type bool
              */
             data: '',
 
@@ -39,14 +41,13 @@
                         [ 'FontSize', 'TextColor', 'BGColor' ]]}
                 }
                 this.editor =  CKEDITOR.appendTo( this.$.internalcontainer, this.editorConfig);
-                var textEditor = this
                 CKEDITOR.on('instanceReady',function( ev ) {
-                    textEditor.isEditorLoaded = true
-                    if(textEditor.data != null) {
-                        textEditor.editor.insertHtml(textEditor.data);
-                        textEditor.data = null;
+                    this.isEditorLoaded = true
+                    if(this.data != null) {
+                        this.editor.insertHtml(this.data);
+                        this.data = null;
                     }
-                });
+                }.bind(this));
             },
 
             dataJSONChanged: function() {
