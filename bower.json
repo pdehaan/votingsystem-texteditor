@@ -1,6 +1,6 @@
 {
   "name": "votingsystem-texteditor",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "authors": [
     "JJ <jgzornoza@gmail.com>"
   ],
@@ -14,8 +14,6 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#~0.4.0",
-    "ckeditor":"ckeditor#~4.4.4",
-    "chai": "~1.9.1",
-    "mocha": "~1.19.0"
+    "ckeditor":"ckeditor#~4.4.4"
   }
 }
